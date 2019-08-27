@@ -46,34 +46,47 @@ function constructCar(carName, carModel, carColor, carSize, carnumberPlate, carM
 }
 function vendingMachine(money, numb) {
 
-let items =[
-    {
-        name:"Lays",
-        price :40
-    },
-    {
-        name:"Dairy Milk",
-        price :100
-    },
-    {
-        name:"Cheetos",
-        price :10
-    },
-    {
-        name:"Peanuts",
-        price :17
-    },
-    {
-        name:"Slanty",
-        price :15
-    },
-]
+    let items = [
+        {
+            name: "Lays",
+            price: 40
+        },
+        {
+            name: "Dairy Milk",
+            price: 100
+        },
+        {
+            name: "Cheetos",
+            price: 10
+        },
+        {
+            name: "Peanuts",
+            price: 17
+        },
+        {
+            name: "Slanty",
+            price: 15
+        },
+    ]
 
-let requestItem = items[numb];
-//console.log (requestItemss);
-if (money > requestItem.price) {
-    return requestItem;
-} else {
-return null;
+    let requestItem = items[numb];
+    //console.log (requestItemss);
+    if (money > requestItem.price) {
+        return requestItem;
+    } else {
+        return null;
+    }
 }
+
+function constructColdDrink(coldDrnikName, coldDrinkPrice, coldDrinkBrand) {
+    let coldDrink = {
+        name: coldDrnikName,
+        price: coldDrinkPrice,
+        brand: coldDrinkBrand,
+        vitamin: function () {
+            console.log(`You will burn Vitamin after drink this ${this.name}`);
+        }
+    }
+    return coldDrink;
 }
+let getDrink = constructColdDrink("Coca kola", 85, "PepsiCo");
